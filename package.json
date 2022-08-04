@@ -1,0 +1,58 @@
+{
+    "name": "vosk-lib",
+    "version": "0.1.0",
+    "description": "Vosk library for node, with type defenitions and multi-arch support.",
+    "keywords": [
+        "speech",
+        "recognition",
+        "vosk"
+    ],
+    "author": "JacobLinCool <jacoblincool@gmail.com> (https://github.com/JacobLinCool)",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "module": "lib/index.mjs",
+    "types": "lib/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./lib/index.d.ts",
+            "import": "./lib/index.mjs",
+            "require": "./lib/index.js"
+        }
+    },
+    "files": [
+        "lib",
+        "scripts"
+    ],
+    "scripts": {
+        "test": "jest --coverage",
+        "dev": "tsup --watch",
+        "build": "tsup",
+        "docs": "typedoc ./src/",
+        "format": "prettier --write '**/*.{js,ts,jsx,tsx,json,yml,yaml,md,html}' --ignore-path .gitignore",
+        "lint": "eslint .",
+        "postinstall": "node scripts/postinstall.js"
+    },
+    "dependencies": {
+        "ffi-napi": "^4.0.3",
+        "ref-napi": "^3.0.3",
+        "yauzl": "^2.10.0"
+    },
+    "devDependencies": {
+        "@types/ffi-napi": "^4.0.5",
+        "@types/jest": "^28.1.6",
+        "@types/node": "^18.6.3",
+        "@types/ref-napi": "^3.0.4",
+        "@types/yauzl": "^2.10.0",
+        "@typescript-eslint/eslint-plugin": "^5.32.0",
+        "@typescript-eslint/parser": "^5.32.0",
+        "eslint": "^8.21.0",
+        "eslint-config-prettier": "^8.5.0",
+        "jest": "^28.1.3",
+        "prettier": "^2.7.1",
+        "ts-jest": "^28.0.7",
+        "tsup": "^6.2.1",
+        "typedoc": "^0.23.10",
+        "typescript": "^4.7.4",
+        "vosk-lib": "workspace:*"
+    }
+}
