@@ -220,7 +220,7 @@ export class Recognizer<T extends XOR<SpeakerRecognizerParam, Partial<GrammarRec
      * Returns speech recognition results
      * @returns The results
      */
-    public result(): Result<T> {
+    public result(): { alternatives: Result<T>[] } {
         return JSON.parse(libvosk.vosk_recognizer_result(this.handle) || "null");
     }
 
@@ -241,7 +241,7 @@ export class Recognizer<T extends XOR<SpeakerRecognizerParam, Partial<GrammarRec
      *
      * @returns speech result.
      */
-    public finalResult(): Result<T> {
+    public finalResult(): { alternatives: Result<T>[] } {
         return JSON.parse(libvosk.vosk_recognizer_final_result(this.handle) || "null");
     }
 

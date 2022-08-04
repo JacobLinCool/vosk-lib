@@ -5,7 +5,7 @@ export type Grammar = string[];
 
 export interface WordResult {
     /** The confidence rate in the detection. 0 For unlikely, and 1 for totally accurate. */
-    conf: number;
+    conf?: number;
     /** The start of the timeframe when the word is pronounced in seconds */
     start: number;
     /** The end of the timeframe when the word is pronounced in seconds */
@@ -15,6 +15,7 @@ export interface WordResult {
 }
 
 export interface RecognitionResults {
+    confidence: number;
     /** Details about the words that have been detected */
     result: WordResult[];
     /** The complete sentence that have been detected */
