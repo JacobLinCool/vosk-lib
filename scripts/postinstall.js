@@ -24,7 +24,7 @@ const ZIP = {
 };
 
 const VERBOSE = true;
-const LIB_DIR = path.resolve(__dirname, "..", "bin");
+const LIB_DIR = path.resolve(__dirname, "..", `bin-${process.platform}-${process.arch}`);
 
 (async () => {
     if (!fs.existsSync(LIB_DIR)) {

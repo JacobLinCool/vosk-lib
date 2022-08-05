@@ -10,17 +10,16 @@ const vosk_recognizer = ref.types.void;
 const vosk_recognizer_ptr = ref.refType(vosk_recognizer);
 
 function get_lib(): string {
+    const dir = path.resolve(__dirname, "..", `bin-${process.platform}-${process.arch}`);
     if (process.platform == "win32") {
         // Update path to load dependent dlls
-        const currentPath = process.env.Path;
-        const dllDirectory = path.resolve(path.join(__dirname, "..", "bin"));
-        process.env.Path = dllDirectory + path.delimiter + currentPath;
+        process.env.Path = dir + path.delimiter + process.env.Path;
 
-        return path.join(__dirname, "..", "bin", "libvosk.dll");
+        return path.join(dir, "libvosk.dll");
     } else if (process.platform == "darwin") {
-        return path.join(__dirname, "..", "bin", "libvosk.dylib");
+        return path.join(dir, "libvosk.dylib");
     } else {
-        return path.join(__dirname, "..", "bin", "libvosk.so");
+        return path.join(dir, "libvosk.so");
     }
 }
 
