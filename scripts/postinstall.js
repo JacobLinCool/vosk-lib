@@ -48,6 +48,7 @@ const LIB_DIR = path.resolve(__dirname, "..", "bin");
     VERBOSE && console.log("Downloaded file to", zip);
 
     await unzip(zip, LIB_DIR);
+    fs.unlinkSync(zip);
 })();
 
 /**
