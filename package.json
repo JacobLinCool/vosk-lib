@@ -1,6 +1,6 @@
 {
     "name": "vosk-lib",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "Vosk library for node, with type defenitions and multi-arch support.",
     "keywords": [
         "speech",
